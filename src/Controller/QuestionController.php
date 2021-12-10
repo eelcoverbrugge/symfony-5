@@ -19,13 +19,24 @@ class QuestionController extends AbstractController
     /**
      * @Route("/question/{slug}", name="question")
      */
-    public function question(string $slug): Response
+    public function show(string $slug): Response
     {
-        return new Response(
-            sprintf(
-                'Future page to show the question "%s"!',
-                ucwords(str_replace('-', ' ', $slug))
-            )
-        );
+        $answers = [
+            'Make sure your cat is sitting purrrfectly still',
+            'Honestly, I like furry shoes better then MY cat',
+            'Maybe... try sating the spell backwards?',
+        ];
+
+        return $this->render('question/show.html.twig', [
+            'question' => ucwords(str_replace('-', ' ', $slug)),
+            'answers' => $answers,
+        ]);
+
+        // return new Response(
+        //     sprintf(
+        //         'Future page to show the question "%s"!',
+        //         ucwords(str_replace('-', ' ', $slug))
+        //     )
+        // );
     }
 }
