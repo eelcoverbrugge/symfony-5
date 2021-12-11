@@ -56,9 +56,3 @@
     </ul>
 </div>
 {% endblock %}
-{% block javascripts %}
-    {# Adds the jQuery library from the base template #}
-    {{ parent() }}
-    {# Adds this on top of it #}
-    <script src="{{ asset('js/question_show.js') }}"></script>
-{% endblock %}
