@@ -17,7 +17,7 @@ class QuestionController extends AbstractController
     }
 
     /**
-     * @Route("/question/{slug}", name="question")
+     * @Route("/question/{slug}", name="question_show")
      */
     public function show(string $slug): Response
     {
